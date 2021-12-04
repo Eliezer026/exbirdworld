@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
 
-export default function App() {
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./src/view/HomeScreen";
+import Colors from "./src/view/color";
+import Details from "./src/view/DetailScreen";
+import ListBird from "./src/view/ListBird";
+import LoginSells from "./src/view/LoginSells";
+import ProfileSelles from "./src/view/ProfileSelles";
+import SellsLogin from "./src/view/SellsLogin";
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    /* <ProfileSelles />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    <NavigationContainer>
+      <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="ListBird" component={ListBird} />
+      </Stack.Navigator>
+    </NavigationContainer>*/
+
+    <SellsLogin />
+  );
+};
+
+export default App;
